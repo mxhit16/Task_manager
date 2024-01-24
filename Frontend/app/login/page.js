@@ -1,6 +1,7 @@
 "use client"
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import Link from "next/link";
 
 
 const page = () => {
@@ -38,7 +39,7 @@ const page = () => {
                         return;
                     }
                     
-                    const res = await fetch("http://192.168.29.166:4000/login", {
+                    const res = await fetch("https://task-manager-backend-po7a.onrender.com/login", {
                         method: "POST", // or 'PUT'
                         headers: {
                           "Content-Type": "application/json",
@@ -57,6 +58,10 @@ const page = () => {
             >
                 Login
             </button>
+
+            <Link href="/signup">
+                click here to signup
+            </Link>
         </div>
     );
 }
